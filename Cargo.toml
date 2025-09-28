@@ -1,0 +1,12 @@
+[package]
+name = "swimming-tracker"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+maud = { version = "0.27.0", features = ["axum"] }
+tokio = { version = "1.47.1", features = ["full"] }
+axum = "0.8.4"
+serde_qs = { version = "0.15.0", features = ["axum"] }
+tower-http = { version = "0.6.6", features = ["fs"] }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add HTMX -->
+    <script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.min.js" integrity="sha384-ZBXiYtYQ6hJ2Y0ZNoYuI+Nq5MqWBr+chMrS/RkXpNzQCApHEhOt2aY8EJgqwHLkJ" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Распределение четверных заплывов</h1>
+        <form id="swimmingForm" hx-get="/submit" hx-target="#response-message" hx-swap="outerHTML">
+            <table id="swimmingTable">
+                <thead>
+                    <tr>
+                        <th>Имя</th>
+                        <th>Возраст (в лунах)</th>
+                        <th>Уровень ПУ</th>
+                        <th>Переход (в секундах)</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr class="data-row">
+                        <td><input type="text" class="name-input" name="swimmers[0][name]" placeholder="Имя" /></td>
+                        <td><input type="number" class="age-input" name="swimmers[0][age]" placeholder="Возраст" /></td>
+                        <td>
+                            <select class="skill-select" name="swimmers[0][skill]">
+                                <option value="">Выбрать</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                            </select>
+                        </td>
+                        <td><input type="number" class="duration-input" name="swimmers[0][duration]" placeholder="Переход" /></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="button-container">
+                <!-- Add Row button will be inserted here by JavaScript -->
+                <button type="submit" class="submit-button">Распределить</button>
+            </div>
+            <div id="response-message"></div>
+        </form>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
