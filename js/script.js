@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
         const newRow = document.createElement('tr');
         newRow.className = 'data-row';
         newRow.innerHTML = `
-            <td><input type="text" class="name-input" name="swimmers[${rowCounter}][name]" placeholder="Enter Name" /></td>
-            <td><input type="number" class="age-input" name="swimmers[${rowCounter}][age]" placeholder="Enter Age" /></td>
+            <td><input type="text" class="name-input" name="swimmers[${rowCounter}][name]" placeholder="Имя" /></td>
+            <td><input type="number" class="age-input" name="swimmers[${rowCounter}][age]" placeholder="Возраст" /></td>
             <td>
                 <select class="skill-select" name="swimmers[${rowCounter}][skill]">
-                    <option value="">Select Skill</option>
+                    <option value="">Уровень ПУ</option>
                     <option value="5">5</option>
                     <option value="6">6</option>
                     <option value="7">7</option>
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <option value="9">9</option>
                 </select>
             </td>
-            <td><input type="number" class="duration-input" name="swimmers[${rowCounter}][duration]" placeholder="Enter Duration" /></td>
+            <td><input type="number" class="duration-input" name="swimmers[${rowCounter}][duration]" placeholder="Переход" /></td>
         `;
         
         tableBody.appendChild(newRow);
